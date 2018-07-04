@@ -326,6 +326,13 @@
                         <outlet property="label_middle" destination="hex-ui-DbJ" id="Gp9-IS-1jr"/>
                         <outlet property="label_right" destination="nPJ-wx-N6m" id="1qv-yN-qeM"/>
                         <outlet property="number" destination="Loo-ds-EsI" id="K95-1w-r4t"/>
+                        <outlet property="slider" destination="FPs-By-Nyu" id="VMi-s8-naS"/>
+                        <outlet property="tip_left" destination="eiY-Vo-kad" id="ZCD-tu-f1m"/>
+                        <outlet property="tip_middle" destination="XQj-gw-bhK" id="Ocr-Df-Vh8"/>
+                        <outlet property="tip_right" destination="fKq-C6-Nwe" id="Gj0-Fg-Cfp"/>
+                        <outlet property="total_left" destination="yb5-UY-mNu" id="SKj-YZ-tD2"/>
+                        <outlet property="total_middle" destination="soW-eC-qqA" id="p8L-n0-m0h"/>
+                        <outlet property="total_right" destination="2LH-Si-f3P" id="xXW-FB-qtk"/>
                         <outletCollection property="zeroes" destination="2LH-Si-f3P" collectionClass="NSMutableArray" id="yeX-rv-Mot"/>
                         <outletCollection property="zeroes" destination="fKq-C6-Nwe" collectionClass="NSMutableArray" id="w95-UP-SKA"/>
                         <outletCollection property="zeroes" destination="eiY-Vo-kad" collectionClass="NSMutableArray" id="0dw-Lz-l0N"/>

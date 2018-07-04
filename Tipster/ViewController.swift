@@ -10,12 +10,39 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var number: UILabel!
+//    Labels
     @IBOutlet weak var label_left: UILabel!
     @IBOutlet weak var label_middle: UILabel!
     @IBOutlet weak var label_right: UILabel!
+//    Tips
+    @IBOutlet weak var tip_left: UILabel!
+    @IBOutlet weak var tip_middle: UILabel!
+    @IBOutlet weak var tip_right: UILabel!
+//    Totals
+    @IBOutlet weak var total_left: UILabel!
+    @IBOutlet weak var total_middle: UILabel!
+    @IBOutlet weak var total_right: UILabel!
+//    Slider
+    @IBOutlet weak var slider: UISlider!
     @IBOutlet var zeroes: [UILabel]!
     @IBAction func sliderMoved(_ sender: UISlider) {
         label_middle.text=String(Int(sender.value))+"%"
+        label_left.text=String(Int(sender.value)-3)+"%"
+        label_right.text=String(Int(sender.value)+3)+"%"
+        if number.text=="OVERLOAD"{
+            return
+        }
+        if number.text!.count>0{
+//            Middle
+            tip_middle.text=String(format:"%.2f", Double(Int(sender.value))*Double(number.text!)!/100)
+            total_middle.text=String(format:"%.2f",Double(tip_middle.text!)!+Double(number.text!)!)
+//            Left
+            tip_left.text=String(format:"%.2f", Double(Int(sender.value)-3)*Double(number.text!)!/100)
+            total_left.text=String(format:"%.2f",Double(tip_left.text!)! + Double(number.text!)!)
+//            Right
+            tip_right.text=String(format:"%.2f", Double(Int(sender.value)+3)*Double(number.text!)!/100)
+            total_right.text=String(format:"%.2f", Double(tip_left.text!)!+Double(number.text!)!)
+        }
     }
     @IBAction func resetPushed(_ sender: UIButton) {
         number.text=""
@@ -29,6 +56,14 @@ class ViewController: UIViewController {
         var allowDot=true
         if old.count>=10 || old=="OVERLOAD"{
             number.text="OVERLOAD"
+            return
+        }
+        if old.count==1 && old=="0" && toAdd=="0"{
+            return
+        }
+        if old.count==0 && toAdd=="."{
+            old="0."
+            number.text=old
             return
         }
         if sender.title(for: .normal)=="."{
@@ -47,8 +82,7 @@ class ViewController: UIViewController {
             old.append(toAdd)
             number.text=old
         }
-       
-//        number.text.append(sender.title(for: .normal))
+        sliderMoved(slider)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
