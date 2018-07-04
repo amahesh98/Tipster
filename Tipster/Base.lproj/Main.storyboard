@@ -284,8 +284,11 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="FPs-By-Nyu">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="4" maxValue="97" translatesAutoresizingMaskIntoConstraints="NO" id="FPs-By-Nyu">
                                                 <rect key="frame" x="128" y="0.0" width="225" height="58"/>
+                                                <connections>
+                                                    <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="lO5-7V-PSe"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -319,7 +322,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="label_left" destination="Uqv-23-8zI" id="c9b-w5-KqJ"/>
+                        <outlet property="label_middle" destination="hex-ui-DbJ" id="Gp9-IS-1jr"/>
+                        <outlet property="label_right" destination="nPJ-wx-N6m" id="1qv-yN-qeM"/>
                         <outlet property="number" destination="Loo-ds-EsI" id="K95-1w-r4t"/>
+                        <outletCollection property="zeroes" destination="2LH-Si-f3P" collectionClass="NSMutableArray" id="yeX-rv-Mot"/>
+                        <outletCollection property="zeroes" destination="fKq-C6-Nwe" collectionClass="NSMutableArray" id="w95-UP-SKA"/>
+                        <outletCollection property="zeroes" destination="eiY-Vo-kad" collectionClass="NSMutableArray" id="0dw-Lz-l0N"/>
+                        <outletCollection property="zeroes" destination="yb5-UY-mNu" collectionClass="NSMutableArray" id="SqY-jJ-9h8"/>
+                        <outletCollection property="zeroes" destination="XQj-gw-bhK" collectionClass="NSMutableArray" id="Sx1-fh-bOI"/>
+                        <outletCollection property="zeroes" destination="soW-eC-qqA" collectionClass="NSMutableArray" id="ZTr-zp-UB7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

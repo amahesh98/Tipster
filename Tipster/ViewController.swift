@@ -9,17 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     @IBOutlet weak var number: UILabel!
-    
     @IBOutlet weak var label_left: UILabel!
     @IBOutlet weak var label_middle: UILabel!
     @IBOutlet weak var label_right: UILabel!
+    @IBOutlet var zeroes: [UILabel]!
     @IBAction func sliderMoved(_ sender: UISlider) {
-        label_middle.text=String(100*sender.value)+"%"
+        label_middle.text=String(Int(sender.value))+"%"
     }
     @IBAction func resetPushed(_ sender: UIButton) {
         number.text=""
+        for label in zeroes{
+            label.text="0.00"
+        }
     }
     @IBAction func numberPressed(_ sender: UIButton) {
         var old:String=number.text!
@@ -52,6 +54,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         number.text=""
+        label_left.text="12%"
+        label_middle.text="15%"
+        label_right.text="18%"
+        for label in zeroes{
+            label.text="0.00"
+        }
     }
 
     override func didReceiveMemoryWarning() {
